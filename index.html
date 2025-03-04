@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Smooth scrolling for better UX */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Improved sticky navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .progress {
+            height: 30px;
+        }
+        .progress-bar {
+            font-weight: bold;
+            transition: width 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Sarthak Joshi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header id="home" class="bg-secondary text-white w-100 text-center py-5 hidden active" style="background-image: url(https://cdn.pixabay.com/photo/2014/12/28/13/20/wordpress-581849_1280.jpg); background-size: 100% 100%;">
+        <div class="container-fluid">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Web Developer | Designer | Programmer</p>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section id="about" class="py-3 pb-3 hidden">
+        <div class="container row">
+            <div class="col-md-4 text-center">
+                <img src="jhfthgv.jpg" alt="img" class="img-thumbnail" style="border-radius:40% 20px; height: 250px; width: 80%;"/>
+            </div>
+            <div class="col-md-8 text-center">
+                <h2>About Me</h2>
+                <p>"Hi, I'm Sarthak Joshi, a passionate web developer specializing in modern web technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js. I have a strong passion for building user-friendly, responsive, and high-performing web applications. With a keen eye for design and functionality, I focus on crafting seamless user experiences while ensuring optimal performance and accessibility. I enjoy working on interactive UI components, optimizing web applications for speed, and integrating the latest front-end technologies."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- progress section  -->
+    <div class="container mt-5 mb-4">
+        <h2 class="text-center">Skill Progress</h2>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-1">HTML</div>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-value="90">90%</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-1">CSS</div>
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width:100%;" data-value="80">80%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-1 mt-3">Bootstrap</div>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%;" data-value="85">85%</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-1 mt-3">JavaScript</div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 0%;" data-value="75">75%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-1 mt-3">ReactJS</div>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 0%;" data-value="70">70%</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-1 mt-3">JSON</div>
+                <div class="progress">
+                    <div class="progress-bar bg-dark" role="progressbar" style="width: 0%;" data-value="85">85%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-1 mt-3">Advanced Excel</div>
+                <div class="progress">
+                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 0%;" data-value="90">90%</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-1 mt-3">Jquery</div>
+                <div class="progress">
+                    <div class="progress-bar bg-danger bg-gradient" role="progressbar" style="width: 0%;" data-value="85">85%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light py-4 hidden">
+        <div class="container-fluid text-center">
+            <h2>My Projects</h2>
+            <div class="row">
+                <div class="col-md-3 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="agro.png" class="card-img-top" style="height: 250px;" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">AGRO Website</h5>
+                            <p>I was created this website using HTML,CSS and Bootstrap.I made it for practice.</p>
+                            <a href="https://sarthakjoshi20.github.io/agro/" target="_blank"><button class="btn btn-outline-success">Visit Website</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="exam.jpg" class="card-img-top" style="height: 250px;" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Exam Portal</h5>
+                            <p>I was created this website using HTML,CSS and Bootstrap.I made it for practice.</p>
+                            <a href=" https://sarthakjoshi20.github.io/examportal1/" target="_blank"><button class="btn btn-outline-success">Visit Website</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="https://cdn-ligep.nitrocdn.com/EzzCXYjnnKJesfaRRepvkYTPINNeWHjj/assets/images/optimized/rev-ce8a9a8/www.sjcpl.in/wp-content/uploads/2017/05/sjcpl-128X104.gif" class="card-img-top" style="height: 250px;" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">SJ CONTRACTS</h5>
+                            <p>I was created this website using HTML,CSS and Bootstrap.I made it for practice.</p>
+                            <a href="https://sarthakjoshi20.github.io/sjconstruction/" target="_blank"><button class="btn btn-outline-success">Visit Website</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-4 hidden">
+        <div class="container-fluid text-center">
+            <h2>My Certificates</h2>
+            <div class="row">
+                <div class="col-md-4 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="html.jpg" class="card-img-top" alt="Certificate 1">
+                        <div class="card-body p-1 bg-dark text-white">
+                            <h5 class="card-title">HTML</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="css.jpg" class="card-img-top" alt="Certificate 2">
+                        <div class="card-body p-1 bg-dark text-white">
+                            <h5 class="card-title">CSS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="boot.jpg" class="card-img-top" alt="Certificate 3">
+                        <div class="card-body p-1 bg-dark text-white">
+                            <h5 class="card-title">BOOTSTRAP</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="javascript.jpg" class="card-img-top" alt="Certificate 2">
+                        <div class="card-body p-1 bg-dark text-white">
+                            <h5 class="card-title">JAVASCRIPT</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="jquery.jpg" class="card-img-top" alt="Certificate 3">
+                        <div class="card-body p-1 bg-dark text-white">
+                            <h5 class="card-title">JQUERY</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-4 ms-2 me-2 mb-2 p-0 hidden" style="box-shadow: 0px 0px 10px 1px lightgray;">
+        <div class="container-fluid text-center">
+            <h2>Contact Me</h2>
+            <p>Email: sarthakjoshi1899@gmail.com</p>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Your Message" required style="resize: none;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-1 hidden">
+        <p>&copy; 2025 Sarthak Joshi. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let elements = document.querySelectorAll(".hidden");
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+            elements.forEach(element => observer.observe(element));
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let navLinks = document.querySelectorAll(".navbar-nav a");
+            let navCollapse = document.querySelector(".navbar-collapse");
+
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    if (navCollapse.classList.contains("show")) {
+                        new bootstrap.Collapse(navCollapse).toggle();
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function() {
+            $('.progress-bar').each(function() {
+                var width = $(this).data('value');
+                $(this).css('width', width + '%');
+            });
+        });
+    </script>
+</body>
+</html>
