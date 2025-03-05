@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/6ab8b3e33c.js" crossorigin="anonymous"></script>
     <style>
         /* Smooth scrolling for better UX */
         html {
@@ -30,9 +31,39 @@
         .progress {
             height: 30px;
         }
-        .progress-bar {
+        .progress-bar{
             font-weight: bold;
-            transition: width 1.5s ease-in-out;
+            transition: width 3s ease-in-out;
+        }
+        .hero {
+            position: relative;
+            background: url('https://cdn.pixabay.com/photo/2014/12/28/13/20/wordpress-581849_1280.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero .content {
+            position: relative;
+            z-index: 1;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 5px;
+            font-size: 25px;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #11a2dc;
         }
     </style>
 </head>
@@ -57,22 +88,44 @@
     </nav>
     
     <!-- Hero Section -->
-    <header id="home" class="bg-secondary text-white w-100 text-center py-5 hidden" style="background-image: url(https://cdn.pixabay.com/photo/2014/12/28/13/20/wordpress-581849_1280.jpg); background-size: 100% 100%;">
-        <div class="container-fluid">
+    <header id="home" class="hero">
+        <div class="content">
             <h1>Welcome to My Portfolio</h1>
             <p>Web Developer | Designer | Programmer</p>
+            <div class="social-icons">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/_sarthak.joshi_" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/9322231899" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                
+                <!-- Gmail (Opens Gmail Compose in a New Tab) -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sarthakjoshi1899@gmail.com" target="_blank">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
         </div>
     </header>
     
     <!-- About Section -->
     <section id="about" class="py-3 pb-3 hidden">
         <div class="container row">
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 mb-2 text-center">
                 <img src="jhfthgv.jpg" alt="img" class="img-thumbnail" style="border-radius:40% 20px; height: 250px; width: 80%;"/>
             </div>
-            <div class="col-md-8 text-center">
-                <h2>About Me</h2>
-                <p>"Hi, I'm Sarthak Joshi, a passionate web developer specializing in modern web technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js. I have a strong passion for building user-friendly, responsive, and high-performing web applications. With a keen eye for design and functionality, I focus on crafting seamless user experiences while ensuring optimal performance and accessibility. I enjoy working on interactive UI components, optimizing web applications for speed, and integrating the latest front-end technologies."</p>
+            <div class="col-md-8 mb-2">
+                <h2 class="text-center">About Me</h2>
+                <p style="text-align: justify;">"Hi, I'm Sarthak Joshi, a passionate web developer specializing in modern web technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js. I have a strong passion for building user-friendly, responsive, and high-performing web applications. With a keen eye for design and functionality, I focus on crafting seamless user experiences while ensuring optimal performance and accessibility. I enjoy working on interactive UI components, optimizing web applications for speed, and integrating the latest front-end technologies."</p>
+                <a href="download-resume.pdf"  target="_blank"><button class="btn btn-primary">Download Reusme</button></a>
             </div>
         </div>
     </section>
@@ -91,7 +144,7 @@
             <div class="col-md-6">
                 <div class="mb-1">CSS</div>
                 <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width:100%;" data-value="80">80%</div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-value="80">80%</div>
                 </div>
             </div>
         </div>
@@ -149,33 +202,44 @@
             <div class="row">
                 <div class="col-md-3 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="agro.png" class="card-img-top" style="height: 250px;" alt="Project 1">
+                        <img src="agro.png" class="card-img-top" style="height: 200px;" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">AGRO Website</h5>
                             <p>I was created this website using HTML,CSS and Bootstrap.I made it for practice.</p>
-                            <a href="https://sarthakjoshi20.github.io/agro/" target="_blank"><button class="btn btn-outline-success">Visit Website</button></a>
+                            <a href="https://sarthakjoshi20.github.io/agro/" target="_blank"><button class="btn btn-outline-primary">Visit Website</button></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="exam.jpg" class="card-img-top" style="height: 250px;" alt="Project 1">
+                        <img src="examsf.png" class="card-img-top" style="height: 200px;" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">Exam Portal</h5>
-                            <p>I was created this website using HTML,CSS and Bootstrap.I made it for practice.</p>
-                            <a href=" https://sarthakjoshi20.github.io/examportal1/" target="_blank"><button class="btn btn-outline-success">Visit Website</button></a>
+                            <p>I was created this website using HTML,CSS,Bootstrap and ReactJS.I made it for practice.</p>
+                            <a href=" https://sarthakjoshi20.github.io/examportal1/" target="_blank"><button class="btn btn-outline-primary">Visit Website</button></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="https://cdn-ligep.nitrocdn.com/EzzCXYjnnKJesfaRRepvkYTPINNeWHjj/assets/images/optimized/rev-ce8a9a8/www.sjcpl.in/wp-content/uploads/2017/05/sjcpl-128X104.gif" class="card-img-top" style="height: 250px;" alt="Project 1">
+                        <img src="https://cdn-ligep.nitrocdn.com/EzzCXYjnnKJesfaRRepvkYTPINNeWHjj/assets/images/optimized/rev-ce8a9a8/www.sjcpl.in/wp-content/uploads/2017/05/sjcpl-128X104.gif" class="card-img-top" style="height: 200px;" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">SJ CONTRACTS</h5>
                             <p>I was created this website using HTML,CSS and Bootstrap.I made it for practice.</p>
-                            <a href="https://sarthakjoshi20.github.io/sjconstruction/" target="_blank"><button class="btn btn-outline-success">Visit Website</button></a>
+                            <a href="https://sarthakjoshi20.github.io/sjconstruction/" target="_blank"><button class="btn btn-outline-primary">Visit Website</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="billi.png" class="card-img-top" style="height: 200px;" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">BILLING SOFTWARE</h5>
+                            <p>I was created this website using HTML,CSS,Bootstrap,JavaScript and Jquery.I made it for practice.</p>
+                            <a href="https://sarthakjoshi20.github.io/billingsoftware/" target="_blank"><button class="btn btn-outline-primary">Visit Website</button></a>
                         </div>
                     </div>
                 </div>
@@ -190,7 +254,7 @@
             <div class="row">
                 <div class="col-md-4 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="html.jpg" class="card-img-top" alt="Certificate 1">
+                        <img src="html.jpg" class="card-img-top" height="230px" alt="Certificate 1">
                         <div class="card-body p-1 bg-dark text-white">
                             <h5 class="card-title">HTML</h5>
                         </div>
@@ -198,7 +262,7 @@
                 </div>
                 <div class="col-md-4 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="css.jpg" class="card-img-top" alt="Certificate 2">
+                        <img src="css.jpg" class="card-img-top" height="230px" alt="Certificate 2">
                         <div class="card-body p-1 bg-dark text-white">
                             <h5 class="card-title">CSS</h5>
                         </div>
@@ -206,7 +270,7 @@
                 </div>
                 <div class="col-md-4 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="boot.jpg" class="card-img-top" alt="Certificate 3">
+                        <img src="boot.jpg" class="card-img-top" height="230px" alt="Certificate 3">
                         <div class="card-body p-1 bg-dark text-white">
                             <h5 class="card-title">BOOTSTRAP</h5>
                         </div>
@@ -214,7 +278,7 @@
                 </div>
                 <div class="col-md-4 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="javascript.jpg" class="card-img-top" alt="Certificate 2">
+                        <img src="javascript.jpg" class="card-img-top" height="230px" alt="Certificate 2">
                         <div class="card-body p-1 bg-dark text-white">
                             <h5 class="card-title">JAVASCRIPT</h5>
                         </div>
@@ -222,9 +286,17 @@
                 </div>
                 <div class="col-md-4 m-0 p-0">
                     <div class="card m-2" style="border-color: white;">
-                        <img src="jquery.jpg" class="card-img-top" alt="Certificate 3">
+                        <img src="jquery.jpg" class="card-img-top" height="230px" alt="Certificate 3">
                         <div class="card-body p-1 bg-dark text-white">
                             <h5 class="card-title">JQUERY</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 m-0 p-0">
+                    <div class="card m-2" style="border-color: white;">
+                        <img src="javasc4.jpeg" class="card-img-top" height="230px" alt="Certificate 3">
+                        <div class="card-body p-1 bg-dark text-white">
+                            <h5 class="card-title">JAVASCRIPT</h5>
                         </div>
                     </div>
                 </div>
