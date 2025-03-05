@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/6ab8b3e33c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <style>
         /* Smooth scrolling for better UX */
         html {
@@ -309,15 +310,15 @@
         <div class="container-fluid text-center">
             <h2>Contact Me</h2>
             <p>Email: sarthakjoshi1899@gmail.com</p>
-            <form>
+            <form id="contact-form">
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
+                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
                 </div>
                 <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Your Email" required>
+                    <input type="email" id="email" class="form-control" placeholder="Your Email" required>
                 </div>
                 <div class="mb-3">
-                    <textarea class="form-control" rows="4" placeholder="Your Message" required style="resize: none;"></textarea>
+                    <textarea id="message" class="form-control" rows="4" placeholder="Your Message" required style="resize: none;"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
@@ -362,6 +363,29 @@
                 $(this).css('width', width + '%');
             });
         });
+
+
+    
+    (function() {
+        emailjs.init("V5XdCKR3IqZvwMlFC"); // Replace with your EmailJS public key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        emailjs.send("service_7swq03p", "template_8nx7ggm", {
+            from_name: document.getElementById("name").value,
+            from_email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        }).then(
+            function(response) {
+                alert("Message sent successfully!");
+            },
+            function(error) {
+                alert("Failed to send message.");
+            }
+        );
+    });
     </script>
 </body>
 </html>
