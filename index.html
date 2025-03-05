@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/6ab8b3e33c.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         /* Smooth scrolling for better UX */
         html {
@@ -364,28 +364,36 @@
             });
         });
 
+        (function() {
+            emailjs.init("w1GIRFZeLv7HOX9Ig"); // Replace with your actual public key
+        })();
 
-    
-    (function() {
-        emailjs.init("V5XdCKR3IqZvwMlFC"); // Replace with your EmailJS public key
-    })();
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
 
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
 
-        emailjs.send("service_7swq03p", "template_8nx7ggm", {
-            from_name: document.getElementById("name").value,
-            from_email: document.getElementById("email").value,
-            message: document.getElementById("message").value
-        }).then(
-            function(response) {
-                alert("Message sent successfully!");
-            },
-            function(error) {
-                alert("Failed to send message.");
+            if (!name || !email || !message) {
+                alert("Please fill in all fields.");
+                return;
             }
-        );
-    });
+
+            emailjs.send("service_7swq03p", "template_8nx7ggm", {
+                from_name: name,
+                from_email: email,
+                message: message
+            }).then(
+                function(response) {
+                    alert("Message sent successfully!");
+                },
+                function(error) {
+                    alert("Failed to send message.");
+                    console.error("Error:", error);
+                }
+            );
+        });
     </script>
 </body>
 </html>
