@@ -70,12 +70,20 @@
             height: 250px;
             width:70%;
             border-radius:10px;
+            margin:auto;
+        }
+        .contacta{
+            text-decoration:none;
+        }
+        .contacta:hover{
+            color: #11a2dc;
         }
         @media(max-width:500px){
             .aboutimg{
                 height: 400px;
                 width:100%;
                 border-radius:10px;
+                margin:auto;
             }
         }
     </style>
@@ -137,8 +145,8 @@
                 <img src="jhfthgv.jpg" alt="img" class="img-thumbnail aboutimg"/>
             </div>
             <div class="col-md-8 mb-2">
-                <h2 class="text-center">About Me</h2>
-                <p style="text-align: justify;">"Hi, I'm Sarthak Joshi, a passionate web developer specializing in modern web technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js. I have a strong passion for building user-friendly, responsive, and high-performing web applications. With a keen eye for design and functionality, I focus on crafting seamless user experiences while ensuring optimal performance and accessibility. I enjoy working on interactive UI components, optimizing web applications for speed, and integrating the latest front-end technologies."</p>
+                <h2 class="text-center" style="margin:auto;">About Me</h2>
+                <p style="text-align: justify; margin:auto">"Hi, I'm Sarthak Joshi, a passionate web developer specializing in modern web technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js. I have a strong passion for building user-friendly, responsive, and high-performing web applications. With a keen eye for design and functionality, I focus on crafting seamless user experiences while ensuring optimal performance and accessibility. I enjoy working on interactive UI components, optimizing web applications for speed, and integrating the latest front-end technologies."</p>
                 <a href="download-resume.pdf"  target="_blank"><button class="btn btn-primary">Download CV</button></a>
             </div>
         </div>
@@ -323,12 +331,12 @@
         <div class="container-fluid text-center">
             <h2>Contact Me</h2>
             <p>Email: 
-                <a href="mailto:sarthakjoshi1899@gmail.com">
+                <a href="mailto:sarthakjoshi1899@gmail.com" class="contacta">
                     sarthakjoshi1899@gmail.com
                 </a>
             </p>
             <p>Mobile: 
-                <a href="tel:+919322231899">
+                <a href="tel:+919322231899" class="contacta">
                     +91 9322231899
                 </a>
             </p>
@@ -398,9 +406,10 @@
 
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
+            const mobile = document.getElementById("mobile").value;
             const message = document.getElementById("message").value;
 
-            if (!name || !email || !message) {
+            if (!name || !email || !mobile || !message) {
                 alert("Please fill in all fields.");
                 return;
             }
@@ -408,6 +417,7 @@
             emailjs.send("service_7swq03p", "template_8nx7ggm", {
                 from_name: name,
                 from_email: email,
+                from_mobile: mobile,
                 message: message
             }).then(
                 function(response) {
