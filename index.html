@@ -163,7 +163,7 @@
     <header id="home" class="hero">
         <div class="content">
             <h1>Welcome to My Portfolio</h1>
-            <p>Web Developer | Designer | Programmer</p>
+            <p>F<span id="type-text"></span><span class="cursor"></span></p>
             <div class="social-icons">
                 <!-- LinkedIn -->
                 <a title="Linkedin" href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank">
@@ -208,7 +208,7 @@
                     <h2 class="text-start abcd">About Me</h2>
                     <p style="text-align: justify;">"Hi, I'm Sarthak Joshi, a passionate web developer specializing in modern web technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js. I have a strong passion for building user-friendly, responsive, and high-performing web applications. With a keen eye for design and functionality, I focus on crafting seamless user experiences while ensuring optimal performance and accessibility. I enjoy working on interactive UI components, optimizing web applications for speed, and integrating the latest front-end technologies."</p>
                     <a href="#contact"><button class="btn btn-info text-white mt-2">Contact Me</button></a>
-                    <a href="download-resume.pdf"  target="_blank"><button class="btn btn-primary mt-2">Download CV</button></a>
+                    <a href="Sarthak Joshi.pdf"  target="_blank"><button class="btn btn-primary mt-2">Download CV</button></a>
                 </div>
             </div>
         </div>
@@ -549,6 +549,28 @@
             }
         );
     });
+    const text = "ront-End Developer || Web Developer";
+    let index = 0;
+    let isDeleting = false;
+    const typingSpeed = 100;
+    const erasingSpeed = 50;
+    const delayBetweenLoops = 50;
+    const element = document.getElementById("type-text");
+
+    function typeLoop() {
+      if (!isDeleting && index <= text.length) {
+        element.textContent = text.substring(0, index++);
+        setTimeout(typeLoop, typingSpeed);
+      } else if (isDeleting && index >= 0) {
+        element.textContent = text.substring(0, index--);
+        setTimeout(typeLoop, erasingSpeed);
+      } else {
+        isDeleting = !isDeleting;
+        setTimeout(typeLoop, delayBetweenLoops);
+      }
+    }
+
+    typeLoop();
     </script>
 </body>
 </html>
