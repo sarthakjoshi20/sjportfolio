@@ -105,6 +105,12 @@
         .abcd{
             display: none;
         }
+        .show1{
+                display:block;
+        }
+        .show2{
+                display:inline;
+          }
         @media(max-width:500px){
             .aboutimg{
                 height: 475px;
@@ -136,6 +142,12 @@
             .abcd{
                 display: block;
             }
+            .show1{
+                display:inline;
+            }
+            .show2{
+                display:block;
+            }
         }
     </style>
 </head>
@@ -162,7 +174,8 @@
     <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="content">
-            <h2>Welcome to My Portfolio</h2>
+            <h1 class="show1">Welcome to My Portfolio</h1>
+            <h2 class="show2">Welcome to My Portfolio</h2>
             <p>F<span id="type-text"></span><span class="cursor"></span></p>
             <div class="social-icons">
                 <!-- LinkedIn -->
