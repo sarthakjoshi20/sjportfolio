@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,6 +111,14 @@
         .show2{
                 display:inline;
           }
+        .education-card {
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
         @media(max-width:500px){
             .aboutimg{
                 height: 475px;
@@ -150,6 +157,69 @@
                 display:none;
             }
         }
+        /* Education Section Styles */
+        #education {
+            background-color: #f8f9fa;
+        }
+
+        .education-card {
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0px 5px 5px 5px rgb(240, 238, 238);
+        }
+
+        .education-card:hover {
+            background-color: rgb(233, 247, 255);
+            transition:all 1s ease-in-out;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .education-card:hover .icon-container i {
+            transform: scale(1.1);
+        }
+        .card{
+             box-shadow: 0px 5px 5px 5px rgb(240, 238, 238);
+        }
+        .card:hover{
+            transition:all 1s ease-in-out;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .icon-container i {
+            transition: all 0.3s ease;
+        }
+
+        /* Different hover colors for each card */
+        .education-card:nth-child(1):hover {
+            border-top: 3px solid #0d6efd;
+        }
+
+        .education-card:nth-child(2):hover {
+            border-top: 3px solid #0dcaf0;
+        }
+
+        .education-card:nth-child(3):hover {
+            border-top: 3px solid #198754;
+        }
+
+        .education-details p strong {
+            color: #333;
+        }
+
+        .education-card:hover .education-details p strong {
+            color: black;
+        }
+
+        .education-card:nth-child(2):hover .education-details p strong {
+            color: #0dcaf0;
+        }
+
+        .education-card:nth-child(3):hover .education-details p strong {
+            color: #198754;
+        }
     </style>
 </head>
 <body>
@@ -164,6 +234,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" title="Home" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" title="About" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" title="Education" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" title="Projects" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" title="Certificates" href="#certificates">Certificates</a></li>
                     <li class="nav-item"><a class="nav-link" title="Contact" href="#contact">Contact</a></li>
@@ -177,7 +248,7 @@
         <div class="content">
             <h1 class="show1">Welcome to My Portfolio</h1>
             <h2 class="show2">Welcome to My Portfolio</h2>
-            <p>F<span id="type-text"></span><span class="cursor"></span></p>
+            <p>&nbsp;<span id="type-text"></span><span class="cursor"></span></p>
             <div class="social-icons">
                 <!-- LinkedIn -->
                 <a title="Linkedin" href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank">
@@ -209,7 +280,7 @@
     </header>
     
     <!-- About Section -->
-    <section id="about" class="py-3 pb-5 bg-light hidden">
+    <section id="about" class="py-3 hidden">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -223,6 +294,77 @@
                     <p style="text-align: justify;">"Hi, I'm Sarthak Joshi, a passionate web developer specializing in modern web technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js. I have a strong passion for building user-friendly, responsive, and high-performing web applications. With a keen eye for design and functionality, I focus on crafting seamless user experiences while ensuring optimal performance and accessibility. I enjoy working on interactive UI components, optimizing web applications for speed, and integrating the latest front-end technologies."</p>
                     <a href="#contact"><button class="btn btn-info text-white mt-2">Contact Me</button></a>
                     <a href="Sarthak Joshi.pdf"  target="_blank"><button class="btn btn-primary mt-2">Download CV</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-3  hidden">
+        <div class="container">
+            <h2 class="text-start mb-4">My Education</h2>
+            <div class="row">
+                <!-- Education Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card education-card h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Bachelor's Degree</h5>
+                            <div class="education-details">
+                                <p class="mb-1"><strong>New Arts, Commerce and Science College Ahmednagar</strong></p>
+                                <p class="mb-1">BBA in Computer Application</p>
+                                <p class="mb-1">Year: 2022 - 2025</p>
+                                <p class="mb-0">CGPA: 8.19/10</p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <small class="text-muted">Completed with Distinction</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card education-card h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-school fa-3x text-info"></i>
+                            </div>
+                            <h5 class="card-title">Higher Secondary</h5>
+                            <div class="education-details">
+                                <p class="mb-1"><strong>Residential Junior College, Ahmednagar</strong></p>
+                                <p class="mb-1">Stream: Commerce</p>
+                                <p class="mb-1">Year: March 2020</p>
+                                <p class="mb-0">Percentage: 60.17%</p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <small class="text-muted">Completed with First Class</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card education-card h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-book fa-3x text-success"></i>
+                            </div>
+                            <h5 class="card-title">Secondary School</h5>
+                            <div class="education-details">
+                                <p class="mb-1"><strong>Mahatma Gandhi Vidyalaya, Yeli</strong></p>
+                                <p class="mb-1">Maharashtra State Board Pune</p>
+                                <p class="mb-1">Year: March 2020</p>
+                                <p class="mb-0">Percentage: 89%</p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <small class="text-muted">School Topper & Completed with Distinction</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -504,6 +646,7 @@
                     <ul type="none" class="text-start">
                         <li><a style="text-decoration: none;" href="#home">Home</a></li>
                         <li class="pad"><a style="text-decoration: none;" href="#about">About</a></li>
+                        <li class="pad"><a style="text-decoration: none;" href="#education">Education</a></li>
                         <li class="pad"><a style="text-decoration: none;" href="#projects">Projects</a></li>
                         <li class="pad"><a style="text-decoration: none;" href="#certificates">Certificates</a></li>
                         <li class="pad"><a style="text-decoration: none;" href="#contact">Contact</a></li>
@@ -579,12 +722,12 @@
             }
         );
     });
-    const text = "ront-End Developer || Web Developer";
+    const text = "Front-End Developer || Web Developer";
     let index = 0;
     let isDeleting = false;
-    const typingSpeed = 100;
+    const typingSpeed = 150;
     const erasingSpeed = 50;
-    const delayBetweenLoops = 50;
+    const delayBetweenLoops = 200;
     const element = document.getElementById("type-text");
 
     function typeLoop() {
