@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,7 +168,7 @@
             transition: all 0.3s ease;
             background-color: white;
             border: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0px 5px 5px 5px rgb(240, 238, 238);
+            box-shadow: 0px 3px 3px 2px rgb(240, 238, 238);
         }
 
         .education-card:hover {
@@ -181,7 +182,7 @@
             transform: scale(1.1);
         }
         .card{
-             box-shadow: 0px 5px 5px 5px rgb(240, 238, 238);
+             box-shadow: 0px 3px 3px 2px rgb(240, 238, 238);
         }
         .card:hover{
             transition:all 1s ease-in-out;
@@ -220,6 +221,148 @@
         .education-card:nth-child(3):hover .education-details p strong {
             color: #198754;
         }
+        /* Skills Section Styles */
+        #skills {
+            background-color: #fff;
+        }
+
+        .skill-item {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 3px 3px 2px rgb(240, 238, 238);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .skill-icon i {
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon i {
+            transform: scale(1.2);
+        }
+
+        .progress {
+            height: 16px;
+            border-radius: 8px;
+        }
+
+        .progress-bar {
+            border-radius: 8px;
+        }
+
+        .bg-purple {
+            background-color: #6f42c1;
+        }
+
+        .text-purple {
+            color: #6f42c1;
+        }
+
+        /* Animation for progress bars */
+        .progress-bar {
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767.98px) {
+            .skill-item {
+                margin-bottom: 20px;
+            }
+        }
+
+
+        /* Certificates Section */
+#certificates {
+    overflow: hidden;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.certificate-card {
+    width: 350px;
+    margin: 0 15px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-img {
+    height: 230px;
+    overflow: hidden;
+}
+
+.certificate-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-img img {
+    transform: scale(1.05);
+}
+
+.certificate-body {
+    padding: 15px;
+    background: #343a40;
+    color: white;
+    text-align: center;
+}
+
+.certificate-body h5 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 8));
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .certificate-card {
+        width: 350px;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-250px * 8));
+        }
+    }
+}
     </style>
 </head>
 <body>
@@ -247,7 +390,7 @@
     <header id="home" class="hero">
         <div class="content">
             <h1 class="show1">Welcome to My Portfolio</h1>
-            <h2 class="show2">Welcome to My Portfolio</h2>
+            <h2 class="show2">Welcome to My Portfolio</h2><br><br>
             <p>&nbsp;<span id="type-text"></span><span class="cursor"></span></p>
             <div class="social-icons">
                 <!-- LinkedIn -->
@@ -371,69 +514,136 @@
     </section>
 
     <!-- progress section  -->
-    <div class="container py-4 hidden">
-        <h2 class="text-start">Skill Progress</h2>
-        
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-1">HTML</div>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-value="90">90%</div>
+    <section class="py-4 hidden" id="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                     <h2 class="text-start">Skill Progress</h2>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-1">CSS</div>
-                <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-value="80">80%</div>
+            <div class="row g-4">
+                <!-- Skill Item 1 - HTML5 -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-html5 fa-3x text-danger"></i>
+                        </div>
+                        <h5>HTML5</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" 
+                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">95%</small>
+                    </div>
+                </div>
+                
+                <!-- Skill Item 2 - CSS3 -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-css3-alt fa-3x text-primary"></i>
+                        </div>
+                        <h5>CSS3</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" 
+                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">90%</small>
+                    </div>
+                </div>
+                
+                <!-- Skill Item 3 - JavaScript -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-js-square fa-3x text-warning"></i>
+                        </div>
+                        <h5>JavaScript</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%" 
+                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">85%</small>
+                    </div>
+                </div>
+                
+                <!-- Skill Item 4 - Bootstrap -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-bootstrap fa-3x text-purple"></i>
+                        </div>
+                        <h5>Bootstrap</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-purple" role="progressbar" style="width: 95%" 
+                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">95%</small>
+                    </div>
+                </div>
+                
+                <!-- Skill Item 5 - React.js -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-react fa-3x text-info"></i>
+                        </div>
+                        <h5>React.js</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%" 
+                                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">80%</small>
+                    </div>
+                </div>
+                
+                <!-- Skill Item 6 - JSON -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-code fa-3x text-success"></i>
+                        </div>
+                        <h5>JSON</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%" 
+                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">90%</small>
+                    </div>
+                </div>
+                
+                <!-- Skill Item 7 - jQuery -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-file-code fa-3x text-blue"></i>
+                        </div>
+                        <h5>jQuery</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #0769AD;" 
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">75%</small>
+                    </div>
+                </div>
+                
+                <!-- Skill Item 8 - Advanced Excel -->
+                <div class="col-md-3 text-center">
+                    <div class="skill-item p-4 rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-file-excel fa-3x text-excel"></i>
+                        </div>
+                        <h5>Advanced Excel</h5>
+                        <div class="progress mt-2">
+                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #217346;" 
+                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted">85%</small>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-1 mt-3">Bootstrap</div>
-                <div class="progress">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%;" data-value="85">85%</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-1 mt-3">JavaScript</div>
-                <div class="progress">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 0%;" data-value="75">75%</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-1 mt-3">ReactJS</div>
-                <div class="progress">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 0%;" data-value="70">70%</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-1 mt-3">JSON</div>
-                <div class="progress">
-                    <div class="progress-bar bg-dark" role="progressbar" style="width: 0%;" data-value="85">85%</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-1 mt-3">Advanced Excel</div>
-                <div class="progress">
-                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 0%;" data-value="90">90%</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-1 mt-3">Jquery</div>
-                <div class="progress">
-                    <div class="progress-bar bg-danger bg-gradient" role="progressbar" style="width: 0%;" data-value="85">85%</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
     
     <!-- Projects Section -->
     <section id="projects" class="bg-light py-4 hidden">
@@ -491,69 +701,104 @@
     <section id="certificates" class="py-4 hidden">
         <div class="container text-center">
             <h2 class="text-start">My Certificates</h2>
-            <div class="row">
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="html.jpg" class="card-img-top" height="230px" alt="Certificate 1">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">HTML</h5>
-                        </div>
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- Certificate 1 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="html.jpg" alt="HTML Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>HTML</h5>
                     </div>
                 </div>
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="css.jpg" class="card-img-top" height="230px" alt="Certificate 2">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">CSS</h5>
-                        </div>
+                
+                <!-- Certificate 2 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="css.jpg" alt="CSS Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>CSS</h5>
                     </div>
                 </div>
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="boot.jpg" class="card-img-top" height="230px" alt="Certificate 3">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">BOOTSTRAP</h5>
-                        </div>
+                
+                <!-- Certificate 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="boot.jpg" alt="Bootstrap Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>Bootstrap</h5>
                     </div>
                 </div>
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="javascript.jpg" class="card-img-top" height="230px" alt="Certificate 2">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">JAVASCRIPT</h5>
-                        </div>
+                
+                <!-- Certificate 4 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="javascript.jpg" alt="JavaScript Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>JavaScript</h5>
                     </div>
                 </div>
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="javasc4.jpeg" class="card-img-top" height="230px" alt="Certificate 3">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">JAVASCRIPT</h5>
-                        </div>
+                
+                <!-- Certificate 5 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="javasc4.jpeg" alt="JavaScript Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>JavaScript</h5>
                     </div>
                 </div>
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="jquery.jpg" class="card-img-top" height="230px" alt="Certificate 3">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">JQUERY</h5>
-                        </div>
+                
+                <!-- Certificate 6 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="jquery.jpg" alt="jQuery Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>jQuery</h5>
                     </div>
                 </div>
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="json.jpg" class="card-img-top" height="230px" alt="Certificate 3">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">JSON</h5>
-                        </div>
+                
+                <!-- Certificate 7 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="json.jpg" alt="JSON Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>JSON</h5>
                     </div>
                 </div>
-                <div class="col-md-4 m-0 p-0">
-                    <div class="card m-2" style="border-color: white;">
-                        <img src="reactJs.jpg" class="card-img-top" height="230px" alt="Certificate 3">
-                        <div class="card-body p-1 bg-dark text-white">
-                            <h5 class="card-title">REACT JS</h5>
-                        </div>
+                
+                <!-- Certificate 8 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="reactJs.jpg" alt="React JS Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>React JS</h5>
+                    </div>
+                </div>
+                
+                <!-- Duplicate items for seamless looping -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="html.jpg" alt="HTML Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>HTML</h5>
+                    </div>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="css.jpg" alt="CSS Certificate" class="img-fluid">
+                    </div>
+                    <div class="certificate-body">
+                        <h5>CSS</h5>
                     </div>
                 </div>
             </div>
